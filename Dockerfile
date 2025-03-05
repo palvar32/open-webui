@@ -172,4 +172,5 @@ USER $UID:$GID
 ARG BUILD_HASH
 ENV WEBUI_BUILD_VERSION=${BUILD_HASH}
 ENV DOCKER=true
+COPY webui.db /app/backend/data/webui.db
 CMD [ "bash", "start.sh"]
