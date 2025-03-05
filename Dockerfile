@@ -152,9 +152,9 @@ RUN pip3 install uv && \
 # Pull webui.db from private GitHub repository
 ARG GITHUB_TOKEN
 RUN mkdir -p /app/backend/data && \
-    git clone https://${GITHUB_TOKEN}@github.com/palvar32/open-webui.git /backups && \
-    cp /backups/webui.db /app/backend/data/ && \
-    rm -rf /backups
+    git clone https://${GITHUB_TOKEN}@github.com/palvar32/open-webui.git /tmp/repo && \
+    cp /tmp/repo/backups/webui.db /app/backend/data/ && \
+    rm -rf /tmp/repo
 
 # copy embedding weight from build
 # RUN mkdir -p /root/.cache/chroma/onnx_models/all-MiniLM-L6-v2
