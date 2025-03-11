@@ -152,7 +152,7 @@ RUN pip3 install uv && \
 # Pull webui.db from private GitHub repository
 ARG GITHUB_TOKEN
 RUN mkdir -p /app/backend/data && \
-    git clone https://${GITHUB_TOKEN}@github.com/palvar32/open-webui.git /tmp/repo && \
+    git clone https://${GITHUB_TOKEN}@github.com/xfoundry/open-webui.git /tmp/repo && \
     cp /tmp/repo/backups/webui.db /app/backend/data/ && \
     rm -rf /tmp/repo
 
